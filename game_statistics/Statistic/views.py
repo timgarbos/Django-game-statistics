@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.core import serializers
 import json
 
+@csrf_exempt
 def postentry(request):
 
 
