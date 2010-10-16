@@ -1,0 +1,28 @@
+
+{% load facebook_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head>
+	
+
+	<title>Explosive Love</title>
+
+	<link rel="stylesheet" href="/site_media/style.css" type="text/css" media="screen" />
+	<script src="/site_media/js/jquery-latest.js"></script>
+
+	{% facebook_js %}
+
+    <meta property="og:type" content="game"/>
+    <meta property="og:url" content="http://garbos.itu.dk{{request.path}}"/>
+    
+    <meta property="og:site_name" content="Explosive Love"/>
+    <meta property="fb:admins" content="USER_ID"/>
+    
+          
+<meta property="og:title" content="Explosive Love"/>
+<meta property="og:image" content=""/>
+<meta property="og:description"
+          content="Explosive Love game"/>
+
+</head>

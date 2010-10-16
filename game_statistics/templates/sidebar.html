@@ -1,0 +1,14 @@
+
+{% load facebook_tags %}
+<div id="rightbar">
+<ul id="highscore">
+
+{% for entry in highscore %}
+
+    <li><fb:user-item uid="{{entry.uid}}" /><p class="score">Score: {{entry.score}}</p></li>
+{% endfor %}
+<li>[image] <p class="score">Invite a friend</p></li>
+</ul>
+
+
+</div>
