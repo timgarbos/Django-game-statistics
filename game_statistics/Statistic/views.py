@@ -6,11 +6,8 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.core import serializers
 import json
 
-def postentry(request, application_id):
-    try:
-        p = Application.objects.get(pk=application_id)
-    except Place.DoesNotExist:
-        raise Http404
+def postentry(request):
+
 
     if request.method != 'POST':
         raise Http404
@@ -19,6 +16,12 @@ def postentry(request, application_id):
     #Check if data is correctly signed in data.signature
     
     realdata = json.loads(data);
+
+    try:
+        p = Application.objects.get(pk=realdata['appid'])
+    except Place.DoesNotExist:
+        raise Http404
+
     u = StatsUser(name="Unknown",type="Unknown")
     u.save()
     s = Statistic.objects.get(name=realdata['name'],application=p)
@@ -29,5 +32,5 @@ def postentry(request, application_id):
     
     
     
-def test(request,application_id):
-    return render_to_response('test.html', {'id':application_id})
+def test(request):
+    return render_to_response('test.html', {})
