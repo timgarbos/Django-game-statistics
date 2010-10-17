@@ -1,11 +1,17 @@
 
 <div id="rightbar">
 <ul id="highscore">
-
+<fb:serverFbml style="width: 755px;">  
+     <script type="text/fbml">
+        <fb:fbml>
 {% for entry in highscore %}
 
     <li><fb:user-item uid="{{entry.user.uid}}" /><p class="score">Score: {{entry.value}}</p></li>
 {% endfor %}
+         </fb:fbml>
+    </script>
+</fb:serverFbml>
+
 <li>[image] <p class="score">Invite a friend</p></li>
 </ul>
 <FORM action="/statistic/postentry" method="post">
