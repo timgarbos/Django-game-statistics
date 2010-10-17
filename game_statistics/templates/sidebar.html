@@ -4,9 +4,9 @@
 
 {% for entry in highscore %}
 <li userid="{{entry.user.uid}}">
-<span class="square" style="background-image: url(http://profile.ak.fbcdn.net/hprofile-ak-snc4/hs458.snc4/50103_337000034_473_q.jpg);">
-<span></span></span><strong><fb:name uid="{{entry.user.uid}}"></fb:name></strong><br>
-<span>Score:<strong>{{entry.value}}</strong></span>
+<fb:profile-pic uid="{{entry.user.uid}}" linked="false" />
+<span><strong><fb:name linked="false" uid="{{entry.user.uid}}"></fb:name></strong><br>
+Score:<strong>{{entry.value}}</strong></span>
 </li>
 {% endfor %}
 
