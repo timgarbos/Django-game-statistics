@@ -5,8 +5,10 @@
 {% for entry in highscore %}
 <li >
 <fb:profile-pic uid="{{entry.user.uid}}" linked="false" ></fb:profile-pic>
+<span class="scoreentryinfo">
 <strong><fb:name linked="false" uid="{{entry.user.uid}}"></fb:name></strong><br>
 Score:<strong>{{entry.value}}</strong>
+</span>
 </li>
 {% endfor %}
 
