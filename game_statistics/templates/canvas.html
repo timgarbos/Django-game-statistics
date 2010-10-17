@@ -1,10 +1,28 @@
 {% include "header.html" %}
 
 
-<fb:like></fb:like>
+<div class="row">
+	<div class="column grid_16"><p>Buy it on app store?</p></div>
+</div>
+<div class="row">
+	<div class="column grid_16"><fb:like></fb:like></div>
+</div>
+<div class="row">
+	<div class="column grid_12"><p>8</p>
+		Game here!
+        {% include "game.html" %}
+	</div>
+	<div class="column grid_4"><p style="line-height: 212px;">{% include "sidebar.html" %}</p></div>
+</div>
 
-{% include "game.html" %}
-{% include "sidebar.html" %}
+
+
+<div class="row">
+	<div class="column grid_16">
+    <fb:comments xid="1" numposts="11" width="700"></fb:comments>
+    </div>
+</div>
+
 
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
