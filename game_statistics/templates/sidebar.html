@@ -1,18 +1,20 @@
 
 <div id="rightbar">
 <ul id="highscore">
-<fb:serverFbml style="width: 755px;">  
-     <script type="text/fbml">
-        <fb:fbml>
+
 {% for entry in highscore %}
-
-    <li><fb:user-item uid="{{entry.user.uid}}" /><p class="score">Score: {{entry.value}}</p></li>
+<li userid="{{entry.user.uid}}">
+<span class="square" style="background-image: url(http://profile.ak.fbcdn.net/hprofile-ak-snc4/hs458.snc4/50103_337000034_473_q.jpg);">
+<span></span></span><strong><fb:name uid="{{entry.user.uid}}"></fb:name></strong><br>
+<span>Score:<strong>{{entry.value}}</strong></span>
+</li>
 {% endfor %}
-         </fb:fbml>
-    </script>
-</fb:serverFbml>
 
-<li>[image] <p class="score">Invite a friend</p></li>
+
+<li userid="">
+<span class="square" style="background-image: url(http://profile.ak.fbcdn.net/hprofile-ak-snc4/hs458.snc4/50103_337000034_473_q.jpg);">
+<span></span></span><strong>Invite a friend</strong>
+</li>
 </ul>
 <FORM action="/statistic/postentry" method="post">
 
