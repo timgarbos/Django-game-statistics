@@ -44,7 +44,7 @@ def test(request):
     return render_to_response('test.html', {})
 
 
-def fb_highscore(request,statistic_id)
+def fb_highscore(request,statistic_id):
     return render_to_response('test.html', {})
 
 @facebook.require_login()
