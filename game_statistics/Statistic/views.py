@@ -30,7 +30,7 @@ def postentry(request):
     except Place.DoesNotExist:
         raise Http404
     
-    u = StatsUser(name=realdata['username'],type='facebook',uid=realdata['uid'])
+    u = StatsUser(name='unknown',type='facebook',uid=realdata['uid'])
     u.save()
     s = Statistic.objects.get(name=realdata['name'],application=p)
     entry = StatisticEntry(value=realdata['value'],user=u,statistic = s)
