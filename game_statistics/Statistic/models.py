@@ -9,6 +9,7 @@ class StatsUser(models.Model):
     name = models.CharField(max_length=300)
     uid = models.IntegerField(null=True, blank=True)
     type = models.CharField(max_length=300)
+    created_date = models.DateTimeField(default=datetime.now)
 
 class Application(models.Model):
     def __unicode__(self):
@@ -49,5 +50,6 @@ class StatisticEntry(models.Model):
     value = models.IntegerField()
     statistic = models.ForeignKey(Statistic)
     user = models.ForeignKey(StatsUser)
+    pub_date = models.DateTimeField(default=datetime.now)
     
 

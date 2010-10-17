@@ -1,23 +1,6 @@
 
 <div id="rightbar">
-<ul id="highscore">
-
-{% for entry in highscore %}
-<li >
-<fb:profile-pic uid="{{entry.user.uid}}" linked="false" ></fb:profile-pic>
-<span class="scoreentryinfo">
-<strong><fb:name linked="false" uid="{{entry.user.uid}}"></fb:name></strong><br>
-Score:<strong>{{entry.value}}</strong>
-</span>
-</li>
-{% endfor %}
-
-
-<li userid="">
-<span class="square" style="background-image: url(http://profile.ak.fbcdn.net/hprofile-ak-snc4/hs458.snc4/50103_337000034_473_q.jpg);">
-<span></span></span><strong>Invite a friend</strong>
-</li>
-</ul>
+{% include "fbhighscore.html" %}
 <FORM action="/statistic/postentry" method="post">
 
 <input name="data" type"text" value='{"uid":{{uid}},"appid":1,"name":"score","value":100}  '/>
