@@ -27,7 +27,7 @@ def postentry(request):
 
     try:
         p = Application.objects.get(pk=realdata['appid'])
-    except Place.DoesNotExist:
+    except Application.DoesNotExist:
         raise Http404
     
     u = Person.objects.get_or_create(type='facebook',uid=realdata['uid'], defaults={'name': 'fb user'})
@@ -63,11 +63,11 @@ def fb_canvas(request,app_id,stat_name):
 
     try:
         p = Application.objects.get(pk=app_id)
-    except Place.DoesNotExist:
+    except Application.DoesNotExist:
         raise Http404
     try:
         s = Statistic.objects.get(name=stat_name,application=p)
-    except Place.DoesNotExist:
+    except Application.DoesNotExist:
         raise Http404
     
     
