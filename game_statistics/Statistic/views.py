@@ -48,7 +48,7 @@ def fb_highscore(request,statistic_id):
     return render_to_response('test.html', {})
 
 @facebook.require_login()
-def fb_canvas(request,app_id,stat_name)
+def fb_canvas(request,app_id,stat_name):
 
     try:
         p = Application.objects.get(pk=app_id)
