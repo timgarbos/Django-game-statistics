@@ -40,6 +40,7 @@ class Statistic(models.Model):
     name = models.CharField(max_length=300)
     application = models.ForeignKey(Application)
     type = models.ForeignKey(StatisticType)
+    isPublic = models.BooleanField()
 
     
 class StatisticEntry(models.Model):

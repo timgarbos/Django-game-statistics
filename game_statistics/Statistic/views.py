@@ -5,6 +5,9 @@ from django.http import Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
+
+from django.views.generic.simple import direct_to_template
+import facebook.djangofb as facebook
 try:
     import json
 except ImportError:
@@ -39,3 +42,25 @@ def postentry(request):
     
 def test(request):
     return render_to_response('test.html', {})
+
+
+def fb_highscore(request,statistic_id)
+    return render_to_response('test.html', {})
+
+@facebook.require_login()
+def fb_canvas(request,app_id,stat_name)
+
+    try:
+        p = Application.objects.get(pk=app_id)
+    except Place.DoesNotExist:
+        raise Http404
+    try:
+        s = Statistic.objects.get(name=stat_name,application=p)
+    except Place.DoesNotExist:
+        raise Http404
+    
+    
+    #Lets get friends who has added the app
+    friends = request.facebook.fql.query("SELECT uid FROM user WHERE has_added_app=1 and uid IN (SELECT uid2 FROM friend WHERE uid1 = $user)")
+    highscore = StatisticEntry.objects.filter(statistic=s).filter(user__uid__in=friends)
+    return direct_to_template(request, 'canvas.html', extra_context={'uid': request.facebook.uid,'highscore':highscore})
