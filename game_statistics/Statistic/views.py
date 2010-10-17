@@ -66,5 +66,5 @@ def fb_canvas(request,app_id,stat_name):
     highscore = []
     for f in friends:
         fbuser = StatsUser.objects.get_or_create(type='facebook', uid=f.get('uid'))
-        highscore.append(StatisticEntry.objects.filter(statistic=s).filter(user=fbuser).order_by('value')[0])
+        highscore.append(StatisticEntry.objects.filter(statistic=s).filter(user__id=fbuser.id).order_by('value')[0])
     return direct_to_template(request, 'canvas.html', extra_context={'uid': request.facebook.uid,'highscore':highscore})
