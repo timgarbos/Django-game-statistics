@@ -62,6 +62,6 @@ def fb_canvas(request,app_id,stat_name):
     
     #Lets get friends who has added the app
     friends = request.facebook.fql.query("SELECT uid FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = "+request.facebook.uid+")")
-    friends
+    friendst.append({u'uid':request.facebook.uid})
     highscore = StatisticEntry.objects.filter(statistic=s).filter(user__uid__in=friends)
     return direct_to_template(request, 'canvas.html', extra_context={'uid': request.facebook.uid,'highscore':highscore})
