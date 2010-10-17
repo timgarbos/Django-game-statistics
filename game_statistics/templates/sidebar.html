@@ -4,7 +4,7 @@
 
 {% for entry in highscore %}
 
-    <li><fb:user-item uid="{{entry.uid}}" /><p class="score">Score: {{entry.score}}</p></li>
+    <li><fb:user-item uid="{{entry.user.uid}}" /><p class="score">Score: {{entry.value}}</p></li>
 {% endfor %}
 <li>[image] <p class="score">Invite a friend</p></li>
 </ul>
