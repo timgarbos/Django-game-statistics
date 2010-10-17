@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from Crypto.PublicKey import RSA
 from Crypto import Random
-import datetime
+from datetime import datetime
 
 class StatsUser(models.Model):
     def __unicode__(self):
