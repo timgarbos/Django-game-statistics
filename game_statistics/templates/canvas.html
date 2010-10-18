@@ -1,6 +1,6 @@
 {% include "header.html" %}
 
-
+{% block content %}
 <div class="row">
 	<div class="column grid_16"><p>Buy it on app store?</p></div>
 </div>
@@ -14,12 +14,14 @@
 	</div>
 	<div class="column grid_4"><p style="line-height: 212px;">{% include "sidebar.html" %}</p></div>
 </div>
-
+{% endblock %}
 
 
 <div class="row">
 	<div class="column grid_16">
+    {% comment %}
     <fb:comments xid="1" numposts="11" width="700"></fb:comments>
+    {% endcomment %}
     </div>
 </div>
 
