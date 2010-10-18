@@ -43,7 +43,7 @@ def postentry(request):
     
 def getHighscores(request,stats_id):
     #Lets get friends who has added the app
-    friends = request.facebook.fql.query("SELECT uid FROM user WHERE has_added_app=1 and uid IN (SELECT uid2 FROM friend WHERE uid1 = "+request.facebook.uid+")")
+    friends = request.facebook.fql.query("SELECT uid FROM user WHERE has_added_app=1 and uid IN (SELECT uid2 FROM friend WHERE uid1 = "+str(request.facebook.uid)+")")
     friends.append({u'uid':request.facebook.uid})
     highscore = []
     for f in friends:
