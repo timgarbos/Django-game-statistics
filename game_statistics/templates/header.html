@@ -12,7 +12,7 @@
     <script type="text/javascript" >
     function reloadScores()
     {
-    $.get('{% url %}', function(data) {
+    $.get('{% url game_statistics.Statistic.views.fb_highscore statistics_id %}', function(data) {
   $('.rightbar').html(data);
   alert('Load was performed.');
 });
