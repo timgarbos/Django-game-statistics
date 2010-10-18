@@ -50,7 +50,7 @@ def getHighscores(request,stats_id):
         scores = StatisticEntry.objects.filter(statistic__id=stats_id).filter(user__uid=f.get('uid')).order_by('-value')
         if scores.count() > 0:
             highscore.append(scores[0])
-            
+    highscore.sort(key=lambda x: x.value, reverse=True)
     return highscore
     
 def test(request):
