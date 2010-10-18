@@ -36,19 +36,19 @@
 	display: inline-block;
 }
 
-.sidebar ul {
+.highscore {
 margin:0;
 padding:0;
 
 }
 
-.sidebar li {
+.highscore li {
 margin:0;
 padding:0;
 list-style-type: none;
 
 }
-.sidebar .score {
+strong.score {
 font-size:20em;
 
 }
