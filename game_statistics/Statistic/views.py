@@ -57,8 +57,16 @@ def test(request):
     return render_to_response('test.html', {})
 
 @facebook.require_login()
-def fb_highscore(request,statistic_id):
-    highscore = getHighscores(request,statistic_id)
+def fb_highscore(request,app_id,stat_name):
+    try:
+        p = Application.objects.get(pk=app_id)
+    except Application.DoesNotExist:
+        raise Http404
+    try:
+        s = Statistic.objects.get(name=stat_name,application=p)
+    except Application.DoesNotExist:
+        raise Http404
+    highscore = getHighscores(request,s.id)
     return render_to_response('fbhighscore.html', {'highscore':highscore})
 
 @csrf_exempt

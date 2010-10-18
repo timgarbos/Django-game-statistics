@@ -12,7 +12,7 @@
     <script type="text/javascript" >
     function reloadScores()
     {
-    $.get('{% url game_statistics.Statistic.views.fb_highscore statistics_id %}', function(data) {
+    $.get('http://stats.ungespiludviklere.dk/game.fcgi/statistic/highscore/1/score/', function(data) {
   $('.rightbar').html(data);
   alert('Load was performed.');
 });
