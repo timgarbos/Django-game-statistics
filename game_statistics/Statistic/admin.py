@@ -13,4 +13,4 @@ admin.site.register(StatsUser)
 admin.site.register(LeaderBoard)
 admin.site.register(Achievement)
 admin.site.register(UserAchievement)
-admin.site.register(LeaderBoard)
+
