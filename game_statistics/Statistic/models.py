@@ -75,6 +75,7 @@ class StatisticEntry(models.Model):
     user = models.ForeignKey(StatsUser)
     pub_date = models.DateTimeField(default=datetime.now)
     build_version = models.IntegerField()
+    game_session = models.IntegerField()
     
 
 class LeaderBoard(models.Model):
