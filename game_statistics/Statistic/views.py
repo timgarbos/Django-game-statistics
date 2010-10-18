@@ -74,7 +74,7 @@ def fb_canvas(request,app_id,stat_name):
     highscore = getHighscores(request,s.id)
     return direct_to_template(request, 'canvas.html', extra_context={'uid': request.facebook.uid,'highscore':highscore,'statistics_id':s.id})
     
-
+@facebook.require_login()
 def invite_friends(request):
     #HTML escape function for invitation content.
     from cgi import escape
