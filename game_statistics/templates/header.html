@@ -9,10 +9,19 @@
 
 	<link rel="stylesheet" href="/site_media/grid.css" type="text/css" media="screen" />
 	<script src="/site_media/js/jquery-latest.js"></script>
+    <script type="text/javascript" >
+    function reloadScores()
+    {
+    $.get('{% url %}', function(data) {
+  $('.rightbar').html(data);
+  alert('Load was performed.');
+});
 
+}
+    </script>
 
     <meta property="og:type" content="game"/>
-    <meta property="og:url" content="http://garbos.itu.dk{{request.path}}"/>
+    <meta property="og:url" content="stats.ungespiludviklere.dk/"/>
     
     <meta property="og:site_name" content="Explosive Love"/>
     <meta property="fb:admins" content="USER_ID"/>
