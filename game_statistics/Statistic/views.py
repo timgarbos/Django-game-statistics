@@ -33,7 +33,7 @@ def postentry(request):
     u = StatsUser.objects.get_or_create(type='facebook',uid=realdata['uid'], defaults={'name': 'fb user'})
     u.save()
     s = Statistic.objects.get(name=realdata['name'],application=p)
-    entry = StatisticEntry(value=realdata['value'],user.id=u.id,statistic = s)
+    entry = StatisticEntry(value=realdata['value'],user=u,statistic = s)
     entry.save()
     response = HttpResponse()
     return response
