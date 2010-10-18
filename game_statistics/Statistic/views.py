@@ -61,6 +61,7 @@ def fb_highscore(request,statistic_id):
     highscore = getHighscores(request,statistic_id)
     return render_to_response('fbhighscore.html', {'highscore':highscore})
 
+@csrf_exempt
 @facebook.require_login()
 def fb_canvas(request,app_id,stat_name):
 
