@@ -5,7 +5,7 @@
      <script type="text/fbml">
         <fb:fbml>
         
-<fb:request-form action="http://apps.facebook.com/explosivelove/postadd/"
+<fb:request-form action="{% url game_statistics.Statistic.views.fbgame 1,'score' %}"
                  method="POST" invite="true" type="Game"
                  content="{{ content }}">
      <fb:multi-friend-selector max="100"
