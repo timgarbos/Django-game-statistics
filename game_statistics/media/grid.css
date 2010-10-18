@@ -48,7 +48,17 @@ padding:0;
 list-style-type: none;
 
 }
-strong.score {
-font-size:16pt;
+.scoreentryinfo strong {
+font-size: 13px;
 
 }
+strong.score {
+font-size:18px;
+
+}
+html {
+font-family:font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+font-size: 11px;
+
+}
+
