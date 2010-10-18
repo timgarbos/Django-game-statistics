@@ -50,6 +50,8 @@ def getHighscores(request,stats_id):
         scores = StatisticEntry.objects.filter(statistic__id=stats_id).filter(user__uid=f.get('uid')).order_by('-value')
         if scores.count() > 0:
             highscore.append(scores[0])
+            
+    return highscore
     
 def test(request):
     return render_to_response('test.html', {})
