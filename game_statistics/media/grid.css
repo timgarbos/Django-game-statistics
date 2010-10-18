@@ -35,3 +35,20 @@
 	width: auto;
 	display: inline-block;
 }
+
+#highscore {
+margin:0;
+padding:0;
+
+}
+
+#highscore li {
+margin:0;
+padding:0;
+list-style-type: none;
+
+}
+#highscore .score {
+font-size:20em;
+
+}
