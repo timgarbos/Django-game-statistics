@@ -99,6 +99,6 @@ def invite_friends(request):
 
 
 def achievements(request,app_id, user_id):
-    achieved = UserAchievement.objects.filter(user__id=user=user_id,achievement__application__id=app_id)
+    achieved = UserAchievement.objects.filter(user__id=user_id,achievement__application__id=app_id)
     noImageUrl = "/site_media/achievements/noimage.jpg"
     return render_to_response('achievements.html', {'achievements':achieved,'noImageUrl':noImageUrl})
