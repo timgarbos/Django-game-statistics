@@ -30,7 +30,7 @@ def postentry(request):
     except Application.DoesNotExist:
         raise Http404
     
-    u = Person.objects.get_or_create(type='facebook',uid=realdata['uid'], defaults={'name': 'fb user'})
+    u = StatsUser.objects.get_or_create(type='facebook',uid=realdata['uid'], defaults={'name': 'fb user'})
     #u.save()
     s = Statistic.objects.get(name=realdata['name'],application=p)
     entry = StatisticEntry(value=realdata['value'],user=u,statistic = s)
